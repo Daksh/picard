@@ -337,6 +337,10 @@ class MainWindow(QtGui.QMainWindow):
         self.support_forum_action = QtGui.QAction(_("&Support Forum..."), self)
         self.support_forum_action.triggered.connect(self.open_support_forum)
 
+        self.support_picardscriptting = QtGui.QAction(_("&File Naming Guide..."), self)
+        self.support_picardscriptting.triggered.connect(self.open_naming_guide)
+	
+
         self.add_files_action = QtGui.QAction(icontheme.lookup('document-open'), _(u"&Add Files..."), self)
         self.add_files_action.setStatusTip(_(u"Add files to the tagger"))
         # TR: Keyboard shortcut for "Add Files..."
@@ -546,6 +550,7 @@ class MainWindow(QtGui.QMainWindow):
         menu.addAction(self.view_history_action)
         menu.addSeparator()
         menu.addAction(self.support_forum_action)
+	menu.addAction(self.support_picardscriptting)
         menu.addAction(self.report_bug_action)
         menu.addAction(self.view_log_action)
         menu.addSeparator()
@@ -732,6 +737,9 @@ class MainWindow(QtGui.QMainWindow):
 
     def open_support_forum(self):
         webbrowser2.goto('forum')
+
+    def open_naming_guide(self):
+	webbrowser2.goto('picscrip')
 
     def open_donation_page(self):
         webbrowser2.goto('donate')
